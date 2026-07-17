@@ -11,13 +11,24 @@ config_version=5
 [application]
 
 config/name="godot_project"
-config/features=PackedStringArray("4.7", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Enums="*res://autoload/enums.gd"
+GameManager="*res://autoload/game_manager.tscn"
+SaveManager="*res://autoload/save_manager.gd"
+AudioManager="*res://autoload/audio_manager.gd"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[dotnet]
+
+project/assembly_name="godot_project"
 
 [physics]
 
