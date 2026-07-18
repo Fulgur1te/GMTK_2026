@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://das1vanpdrtkh"]
+
+[node name="SpineShowcase" type="Node2D" unique_id=1459249567]
+
+[node name="SpineSprite" type="SpineSprite" parent="." unique_id=6821236]
