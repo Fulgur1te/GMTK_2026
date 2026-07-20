@@ -2,6 +2,8 @@
 
 [ext_resource type="SpineSkeletonDataResource" uid="uid://co1srmfcu5aky" path="res://Spine Showcase/Nitronic_Spine_Test.tres" id="1_bgdir"]
 [ext_resource type="Script" uid="uid://cgfhk4l4v2g8m" path="res://Spine Showcase/spine_showcase.gd" id="1_i5bls"]
+[ext_resource type="Script" uid="uid://dos3qhffr4v0a" path="res://addons/rhythm_notifier/rhythm_notifier.gd" id="3_lw3jt"]
+[ext_resource type="AudioStream" uid="uid://bpm2box0arfix" path="res://Spine Showcase/audio_test/Jazzy City Jazzy Rogue.mp3" id="4_lw3jt"]
 
 [node name="SpineShowcase" type="Node2D" unique_id=1459249567]
 script = ExtResource("1_i5bls")
@@ -13,3 +15,14 @@ preview_animation = "Demo/atktest"
 preview_frame = false
 preview_time = 0.0
 position = Vector2(996, 917)
+
+[node name="RhythmNotifier" type="Node" parent="." unique_id=449103238 node_paths=PackedStringArray("audio_stream_player")]
+script = ExtResource("3_lw3jt")
+audio_stream_player = NodePath("../AudioStreamPlayer")
+metadata/_custom_type_script = "uid://dos3qhffr4v0a"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1583083331]
+stream = ExtResource("4_lw3jt")
+autoplay = true
+
+[connection signal="beat" from="RhythmNotifier" to="." method="_on_rhythm_notifier_beat"]
